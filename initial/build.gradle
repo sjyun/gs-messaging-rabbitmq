@@ -33,3 +33,42 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
+
+ idea{
+	module{
+		downloadSources = true
+	}
+  }
+
+ eclipse{
+		classpath {
+			downloadSources = true
+			defaultOutputDir = file("${buildDir}/classes/main")	
+/*
+
+		file{
+			withXml{
+        		xml -> def node = xml.asNode()
+       			node.remove( node.find {it.@path == 'org.eclipse.jst.j2ee.internal.web.container'})
+       			node.appendNode('classpathentry',[kind:'con',path: 'org.eclipse.jst.j2ee.internal.web.container', exported:'true'])
+     			}
+		    }
+*/
+	 	}
+
+		jdt{
+			sourceCompatibility = 1.7
+			targetCompatibility = 1.7
+		}
+		/*
+		wtp{
+			component{
+				//contextPath ='/'
+			}
+			facet{
+				facet name :'jst.web',   version:'3.0'
+				facet name : 'jst.java', version:'1.7'
+			}
+		}
+		*/
+    }

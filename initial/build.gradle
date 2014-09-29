@@ -44,6 +44,8 @@ task wrapper(type: Wrapper) {
 		classpath {
 			downloadSources = true
 			defaultOutputDir = file("${buildDir}/classes/main")	
+
+//if use eclipse-wtp and java config you can use withXml task			
 /*
 
 		file{
